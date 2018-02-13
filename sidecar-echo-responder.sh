@@ -13,7 +13,7 @@ SERVICE_PROTO="${SERVICE_PROTO:-t}"
 SERVICE_PORT="${SERVICE_PORT:-25}"
 
 # create a pipe to have the client's input back to it
-PIPE_FILE="sidecar-echo-responder.fifo"
+PIPE_FILE="$(mktemp -u -t sidecar-echo-responder.XXX.fifo)"
 [ -p "${PIPE_FILE}" ] || mknod -m 777 "${PIPE_FILE}" p
 
 # start netcat in listening and keepalive mode
