@@ -20,7 +20,7 @@ PIPE_FILE="$(mktemp -u -t sidecar-echo-responder.XXX.fifo)"
 printf "Starting echo responder on port '%s'\n" "${PONG_PORT}"
 cat "${PIPE_FILE}" | nc -lk -p "${PONG_PORT}" > "${PIPE_FILE}" &
 
-# will exit is no socket is listening on the given port
+# will exit if no socket is listening on the given port
 while /bin/true ; do
     ss -ln"${SERVICE_PROTO}" | grep ":${SERVICE_PORT}" > /dev/null
     sleep 1
