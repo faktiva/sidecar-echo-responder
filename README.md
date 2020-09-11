@@ -1,6 +1,6 @@
 # sidecar-echo-responder
 
-Simple shell script to add "**pong**" feature to services such as _SMTP_
+Simple shell script to add "**pong**" feature to services not having it, such as _**SMTP**_
 
 ___
 
