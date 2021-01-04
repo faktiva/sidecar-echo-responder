@@ -3,6 +3,13 @@
 # @author Emiliano Gabrielli <albert@faktiva.com>
 # @license MIT
 #
+# This script is intended to monitor the availability of a given service on the provided port.
+# It listens for connections on its own port (6666), while monitoring a given socket to the provided service port (25).
+# If the monitored service become unresponsive the script exits, thus making the endpoint it provides unreachable.
+#
+# The tipical use case is to act as an heath check endpoint for a SMTP cluster behind a Load Balancer, 
+# it has been used this way for long time in production environment on AWS.
+#
 # The default is to check an SMTP server on port 25 of the localhost.
 # In case adjust this script by simply exporting the variables with the adjusted values
 
